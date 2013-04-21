@@ -12,15 +12,17 @@ body
 	width: 100%;
 	padding: 5px;
 	font-family: Verdana;
-	color: #33DF25;
+	color: #000;
 	font-size: 1em; 
 	background: #000;
 }
 
 #header span
 {
+	color: #33DF25;
 	display: block;
-	width: 20%;
+	width: 16%;
+	height: 10px;
 	float: right;
 	text-align: left;
 }
@@ -28,4 +30,12 @@ body
 #boundary
 {
 	display: block;
+}
+
+#base
+{
+	z-index: 0;
+	position: absolute;
+	top: 25%;
+	left: 25%;
 }

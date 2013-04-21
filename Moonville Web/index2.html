@@ -4,65 +4,17 @@
 		<link rel="stylesheet" type="text/css" href="reset.css"/>
 		<link rel="stylesheet" type="text/css" href="style.css"/>
 		<script src="easel-lib.js"></script>
+		<script src="functions.js"></script>
 		<script>
-			function init()
+			function myFunction()
 			{
-				var stage = new createjs.Stage("boundary");
-				var bitmap;
-
-				boundary.width = window.innerWidth;
-				boundary.height = window.innerHeight;
-				
-				circle = new createjs.Shape();
-				stage.addChild(circle).setTransform(100,100).graphics.f("green").dc(0,0,50);
-				stage.update();
-
-				// display image
-				var image = new Image();
-				image.src = 'excavator2.png';
-				image.onload = handleImageLoad(image, 150, 260);
-				
-				function handleImageLoad(x, a, b)
-				{
-					bitmap = new createjs.Bitmap(x);
-					bitmap.x = a;
-					bitmap.y = b;
-					stage.addChild(bitmap);
-				}(bitmap);
-				
-				var base = new Image();
-				base.src = 'base.png';
-				image.onload = handleImageLoad(base, 350, 15);
-				
-				stage.update();
-				
-				var dragger = new createjs.Container();
-				
-				dragger.x = dragger.y = 100;
-				dragger.addChild(circle);
-				stage.addChild(dragger);
-				
-				stage.addChild(dragger);
-			
-				dragger.addEventListener("mousedown", function(evt) {
-				var offset = {x:evt.target.x-evt.stageX, y:evt.target.y-evt.stageY};
-                 
-				// add a handler to the event object's onMouseMove callback
-				// this will be active until the user releases the mouse button:
-				evt.addEventListener("mousemove",function(ev) {
-				    ev.target.x = ev.stageX+offset.x;
-					ev.target.y = ev.stageY+offset.y;
-					stage.update();   
-					});
-				});
-
-				
-				stage.update();
-			}		
+				alert("Mine minerals with the excavator!");
+			}
 		</script>
 	</head>
 	<body onLoad="init()">
-			<div id="header">MoonVille - KSC<span>Game Values</span></div>
-			<canvas id="boundary" width="inherit">Hello World</canvas>
+			<div id="header">MoonVille - KSC<span><img src="corner.png" /></span></div>
+			<canvas id="boundary" width="inherit">Your browser does not support canvas.</canvas>
+			<div id="base"><img onclick="myfunction()" value = "Show alert box" src="base.png" /></div>
 	</body>
 </html>
