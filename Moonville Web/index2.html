@@ -7,7 +7,8 @@
 		<script>
 			function init()
 			{
-				var stage = new createjs.Stage("boundary");			
+				var stage = new createjs.Stage("boundary");
+				var bitmap;
 
 				boundary.width = window.innerWidth;
 				boundary.height = window.innerHeight;
@@ -19,23 +20,19 @@
 				// display image
 				var image = new Image();
 				image.src = 'excavator2.png';
-				image.onload = handleImageLoad();
+				image.onload = handleImageLoad(image, 150, 260);
 				
-				function handleImageLoad()
+				function handleImageLoad(x, a, b)
 				{
-					var bitmap = new createjs.Bitmap(image);
-					bitmap.x = 350;
-					bitmap.y = 460;
+					bitmap = new createjs.Bitmap(x);
+					bitmap.x = a;
+					bitmap.y = b;
 					stage.addChild(bitmap);
-				}
-				
-				var myimage = new Image();
-				myimage.onload = function() {boundary.getContext('2d').drawImage(myimage, 20, 140);}
-				myimage.src = 'easel/EaselJS/examples/assets/daisy.png';
+				}(bitmap);
 				
 				var base = new Image();
-				base.onload = function() {boundary.getContext('2d').drawImage(base, 20, 140);}
 				base.src = 'base.png';
+				image.onload = handleImageLoad(base, 350, 15);
 				
 				stage.update();
 				
@@ -65,6 +62,7 @@
 		</script>
 	</head>
 	<body onLoad="init()">
+			<div id="header">MoonVille - KSC<span>Game Values</span></div>
 			<canvas id="boundary" width="inherit">Hello World</canvas>
 	</body>
 </html>
