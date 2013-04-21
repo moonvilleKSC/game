@@ -7,19 +7,28 @@
 		<script>
 			function init()
 			{
-				var stage = new createjs.Stage("boundary");
-				stage.addChild(new createjs.Shape()).setTransform(100,100).graphics.f("green").dc(0,0,50);
+				var stage = new createjs.Stage("boundary");			
+
+				boundary.width = window.innerWidth;
+				boundary.height = window.innerHeight;
 				
+				stage.addChild(new createjs.Shape()).setTransform(100,100).graphics.f("green").dc(0,0,50);
+				stage.update();
+
 				// display image
 				var myimage = new Image();
 				myimage.onload = function() {boundary.getContext('2d').drawImage(myimage, 20, 140);}
 				myimage.src = 'easel/EaselJS/examples/assets/daisy.png';
 				
+				var base = new Image();
+				base.onload = function() {boundary.getContext('2d').drawImage(base, 20, 140);}
+				base.src = 'base.png';
+				
 				stage.update();
 			}		
 		</script>
 	</head>
-	<body onload="init()">
-		<canvas id="boundary" width="480px"; height="320px";>Hello World</canvas>
+	<body onLoad="init()">
+			<canvas id="boundary" width="inherit">Hello World</canvas>
 	</body>
 </html>
