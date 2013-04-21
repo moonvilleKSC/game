@@ -1,0 +1,12 @@
+body
+{
+	text-align: center;
+}
+
+#boundary
+{
+	display: inline-block;
+	width: 480px;
+	height: 320px;
+	border: 1px dashed #000;
+}
