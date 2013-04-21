@@ -6,19 +6,20 @@
 	<script src="../EaselJS/lib/easeljs-0.6.0.min.js"></script>
 	<script>
 		function init() {
-			var stage = new createjs.Stage("demoCanvas");
-			var circle = new createjs.Shape();
-			circle.graphics.beginFill("red").drawCircle(0, 0, 100);
-			circle.x = 100;
-			circle.y = 100;
-			stage.addChild(circle);
-			//stage.addChild(new createjs.Shape()).setTransform(100,100).graphics.f("red").dc(0,0,50);
+			var stage = new createjs.Stage("moonvilleCanvas");
+			var image = new Image();
+			image.src = "";
+			image.onload = loadImages;
+			
 			stage.update();
+		}
+		
+		function loadImages(){
 		}
 	</script>
 </head>
 <body onLoad="init();">
-	<canvas id="demoCanvas" width="500" height="200">
+	<canvas id="moonvilleCanvas" width="480" height="320">
 		alternate content
 	</canvas>
 </body>
