@@ -1,6 +1,10 @@
+body
+{
+	text-align:center;
+	overflow: hidden;
+}
+
 #boundary
 {
 	display: inline-block;
-	background-color: #FF0;
-	border: 1px dashed #000;
 }

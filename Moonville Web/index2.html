@@ -12,7 +12,8 @@
 				boundary.width = window.innerWidth;
 				boundary.height = window.innerHeight;
 				
-				stage.addChild(new createjs.Shape()).setTransform(100,100).graphics.f("green").dc(0,0,50);
+				circle = new createjs.Shape();
+				stage.addChild(circle).setTransform(100,100).graphics.f("green").dc(0,0,50);
 				stage.update();
 
 				// display image
@@ -34,7 +35,7 @@
 				var dragger = new createjs.Container();
 				
 				dragger.x = dragger.y = 100;
-				dragger.addChild(excavator);
+				dragger.addChild(circle);
 				stage.addChild(dragger);
 				
 				dragger.addEventListener("mousedown", function(evt) {
