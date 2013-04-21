@@ -9,8 +9,14 @@
 			{
 				var stage = new createjs.Stage("boundary");
 				stage.addChild(new createjs.Shape()).setTransform(100,100).graphics.f("green").dc(0,0,50);
+				
+				// display image
+				var myimage = new Image();
+				myimage.onload = function() {boundary.getContext('2d').drawImage(myimage, 20, 140);}
+				myimage.src = 'easel/EaselJS/examples/assets/daisy.png';
+				
 				stage.update();
-			}
+			}		
 		</script>
 	</head>
 	<body onload="init()">
