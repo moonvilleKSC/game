@@ -17,6 +17,18 @@
 				stage.update();
 
 				// display image
+				var image = new Image();
+				image.src = 'excavator2.png';
+				image.onload = handleImageLoad();
+				
+				function handleImageLoad()
+				{
+					var bitmap = new createjs.Bitmap(image);
+					bitmap.x = 350;
+					bitmap.y = 460;
+					stage.addChild(bitmap);
+				}
+				
 				var myimage = new Image();
 				myimage.onload = function() {boundary.getContext('2d').drawImage(myimage, 20, 140);}
 				myimage.src = 'easel/EaselJS/examples/assets/daisy.png';
@@ -24,11 +36,6 @@
 				var base = new Image();
 				base.onload = function() {boundary.getContext('2d').drawImage(base, 20, 140);}
 				base.src = 'base.png';
-				
-				var excavator = new Image();
-				excavator.onload = function() {boundary.getContext('2d').drawImage(excavator, 460, 460);}
-					
-				excavator.src = 'excavator2.png';
 				
 				stage.update();
 				
