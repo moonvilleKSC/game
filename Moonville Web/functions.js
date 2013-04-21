@@ -27,6 +27,10 @@ function init()
 					return bitmap;
 				}(bitmap);
 				
+				var base = new Image();
+				base.src = 'base.png';
+				base.onload = handleImageLoad(base, 150, 150);
+				
 				stage.update();
 				
 				var dragger = new createjs.Container();
