@@ -24,6 +24,29 @@
 				base.onload = function() {boundary.getContext('2d').drawImage(base, 20, 140);}
 				base.src = 'base.png';
 				
+				var excavator = new Image();
+				excavator.onload = function() {boundary.getContext('2d').drawImage(excavator, 460, 460);}
+					
+				excavator.src = 'excavator2.png';
+				
+				stage.update();
+				
+				var dragger = new createjs.Container();
+				
+				dragger.x = dragger.y = 100;
+				dragger.addChild(excavator);
+				stage.addChild(dragger);
+				
+				dragger.addEventListener("mousedown", function(evt) {
+					var offset = {x:evt.target.x-evt.stageX, y:evt.target.y-evt.stageY};
+					
+					evt.addEventListener("mousemove", function(ev) {
+						ev.target.y = ev.stageX+offset.x;
+							ev.target.y = ev.stageY+offset.y;
+							stage.update();
+					});
+				});
+				
 				stage.update();
 			}		
 		</script>
