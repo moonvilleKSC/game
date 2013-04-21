@@ -2,6 +2,9 @@ body
 {
 	text-align:center;
 	overflow: hidden;
+	background-image: url('background.jpg');
+	background-repeat: no-repeat;
+	background-position: right-top;
 }
 
 #boundary

@@ -38,15 +38,20 @@
 				dragger.addChild(circle);
 				stage.addChild(dragger);
 				
+				stage.addChild(dragger);
+			
 				dragger.addEventListener("mousedown", function(evt) {
-					var offset = {x:evt.target.x-evt.stageX, y:evt.target.y-evt.stageY};
-					
-					evt.addEventListener("mousemove", function(ev) {
-						ev.target.y = ev.stageX+offset.x;
-							ev.target.y = ev.stageY+offset.y;
-							stage.update();
+				var offset = {x:evt.target.x-evt.stageX, y:evt.target.y-evt.stageY};
+                 
+				// add a handler to the event object's onMouseMove callback
+				// this will be active until the user releases the mouse button:
+				evt.addEventListener("mousemove",function(ev) {
+				    ev.target.x = ev.stageX+offset.x;
+					ev.target.y = ev.stageY+offset.y;
+					stage.update();   
 					});
 				});
+
 				
 				stage.update();
 			}		
