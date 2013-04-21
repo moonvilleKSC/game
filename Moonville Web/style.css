@@ -1,12 +1,6 @@
-body
-{
-	text-align: center;
-}
-
 #boundary
 {
 	display: inline-block;
-	width: 480px;
-	height: 320px;
+	background-color: #FF0;
 	border: 1px dashed #000;
 }

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="reset.css"/>
+		<link rel="stylesheet" type="text/css" href="style.css"/>
+		<script src="easel-lib.js"></script>
+		<script>
+			function init()
+			{
+				var stage = new createjs.Stage("boundary");
+				stage.addChild(new createjs.Shape()).setTransform(100,100).graphics.f("green").dc(0,0,50);
+				stage.update();
+			}
+		</script>
+	</head>
+	<body onload="init()">
+		<canvas id="boundary" width="480px"; height="320px";>Hello World</canvas>
+	</body>
+</html>
